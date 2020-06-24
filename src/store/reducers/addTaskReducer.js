@@ -1,15 +1,10 @@
-const initialState = {
-    tasks: [],
-};
+var initialState = ["asda", "asdasd", "Asdasd"];
+console.log(...initialState, "*");
 
 const addTaskReducer = (state = initialState, action) => {
-    console.log(action.payload, "[AddtaskReducer.js]");
     switch (action.type) {
         case "ADD_TASK":
-            return {
-                ...state,
-                tasks: [...state.tasks, action.payload],
-            };
+            return "ASdsad";
 
         default:
             return {};

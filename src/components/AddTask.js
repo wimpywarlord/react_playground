@@ -13,11 +13,11 @@ const AddTask = () => {
     const dispatch = useDispatch();
     return (
         <div>
-            <label for="exampleInputEmail1">Enter Task</label>
+            <label>Enter Task</label>
             <input
                 style={style}
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
             ></input>
             <Link to="/">
