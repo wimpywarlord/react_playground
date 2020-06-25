@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addTaskAction } from "../store/actions";
+
+import $ from "jquery";
+
+import { useDispatch } from "react-redux";
+import { addTaskAction } from "../store/actions/index";
 
 const AddTask = () => {
     const style = {
@@ -9,15 +12,20 @@ const AddTask = () => {
         margin: "auto",
     };
 
-    // const addTask = useSelector((state) => state.addTask);
     const dispatch = useDispatch();
+
+    const localAdd = () => {
+        console.log($(".input_of_task").val());
+        dispatch(addTaskAction($(".input_of_task").val()));
+    };
+
     return (
         <div>
             <label>Enter Task</label>
             <input
                 style={style}
                 type="email"
-                className="form-control"
+                className="input_of_task"
                 id="exampleInputEmail1"
             ></input>
             <Link to="/">
@@ -27,7 +35,7 @@ const AddTask = () => {
             </Link>
             <Link to="/view">
                 <button
-                    onClick={() => dispatch(addTaskAction("TASk"))}
+                    onClick={() => localAdd()}
                     type="button"
                     className="btn btn-success m-3"
                 >

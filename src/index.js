@@ -12,11 +12,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 // REDUX SETUP
 import { createStore } from "redux";
-import allReducer from "./store/reducers/index";
+import allReducers from "./store/reducers/index";
 import { Provider } from "react-redux";
 
 const store = createStore(
-    allReducer,
+    allReducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
